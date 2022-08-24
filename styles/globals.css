@@ -11,4 +11,8 @@
   .glass {
     @apply backdrop-blur-sm bg-slate-500/20 rounded-lg p-3 shadow-xl text-shadow-xl ring-1 ring-white/30;
   }
+
+  .stopwatch {
+    @apply border border-sky-200 rounded-lg p-4 m-4;
+  }
 }

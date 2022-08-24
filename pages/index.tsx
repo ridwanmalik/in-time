@@ -1,6 +1,7 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { Module } from "../components"
+import Stopwatch from "../components/Stopwatch"
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           <Module title="Singapore" options={{ timeZone: "Asia/Singapore" }} />
           <Module title="Finland" options={{ timeZone: "Europe/Helsinki" }} />
           <Module title="India" options={{ timeZone: "Asia/Kolkata" }} />
+          <Module title="Stopwatch" type="STOPWATCH" />
         </main>
       </div>
     </div>
