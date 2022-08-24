@@ -12,7 +12,7 @@ type ModuleProps = {
 
 const Module: FC<ModuleProps> = ({ title, options }) => {
   return (
-    <div className="module backdrop-blur-sm bg-white/20 rounded-lg p-3 shadow-xl border border-white/30 text-shadow-xl">
+    <div className="module glass">
       <h1>{title}</h1>
       <Clock timeZone={options?.timeZone} />
     </div>

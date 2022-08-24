@@ -6,24 +6,34 @@ type ClockProps = {
 }
 
 const defaultProps = {
-  timeZone: "Asia/Dhaka",
+  timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
 }
 
 const Clock: FC<ClockProps> = ({ timeZone }) => {
-  const [clock, setClock] = useState("0:00:00 AM")
+  const [clock, setClock] = useState({
+    time: "0:00:00",
+    amPm: "AM",
+  })
 
   useEffect(() => {
-    const interval = 1 // seconds
-    const intervalFn = setInterval(() => {
+    const intervalPeriod = 1 // seconds
+    const intervalId = setInterval(() => {
       const dateTimeNow = new Date()
       const tz = timeZone ? timeZone : defaultProps.timeZone
-      const formattedDateTime = formatInTimeZone(dateTimeNow, tz, "pp")
-      setClock(formattedDateTime)
-    }, interval * 1000)
-    return () => clearInterval(intervalFn)
+      const formattedTime = formatInTimeZone(dateTimeNow, tz, "h:mm:ss aa")
+      const time = formattedTime.slice(0, -3)
+      const amPm = formattedTime.slice(-3).trim()
+      setClock({ time, amPm })
+    }, intervalPeriod * 1000)
+    return () => clearInterval(intervalId)
   }, [])
 
-  return <p className="clock text-4xl my-5">{clock}</p>
+  return (
+    <p className="clock text-6xl font-medium my-5">
+      {clock.time}
+      <span className="text-base ml-2">{clock.amPm}</span>
+    </p>
+  )
 }
 
 Clock.defaultProps = defaultProps
