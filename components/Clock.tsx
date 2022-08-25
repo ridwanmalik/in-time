@@ -6,10 +6,10 @@ type ClockProps = {
   timeZone?: TIME_ZONES
 }
 
-const defaultTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+const systemTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
 const defaultProps = {
-  timeZone: defaultTimeZone,
+  timeZone: systemTimeZone as TIME_ZONES,
 }
 
 const Clock: FC<ClockProps> = ({ timeZone }) => {
