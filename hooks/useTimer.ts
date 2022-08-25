@@ -1,35 +1,28 @@
-import { useState, useRef } from 'react'
+import { useRef, useState } from "react"
 
 const useTimer = (initialState = 0) => {
   const [timer, setTimer] = useState(initialState)
   const [isActive, setIsActive] = useState(false)
-  const [isPaused, setIsPaused] = useState(false)
+  const [isPaused, setIsPaused] = useState(true)
   const countRef = useRef<NodeJS.Timer | NodeJS.Timeout | undefined>(undefined)
 
-  const handleStart = () => {
-    setIsActive(true)
-    setIsPaused(true)
+  const handlePlay = () => {
+    if (isActive) setIsActive(true)
+    setIsPaused(false)
     countRef.current = setInterval(() => {
-      setTimer((timer) => timer + 1)
+      setTimer(timer => timer + 1)
     }, 1000)
   }
 
   const handlePause = () => {
     clearInterval(countRef.current)
-    setIsPaused(false)
-  }
-
-  const handleResume = () => {
     setIsPaused(true)
-    countRef.current = setInterval(() => {
-      setTimer((timer) => timer + 1)
-    }, 1000)
   }
 
   const handleReset = () => {
     clearInterval(countRef.current)
     setIsActive(false)
-    setIsPaused(false)
+    setIsPaused(true)
     setTimer(0)
   }
 
@@ -37,9 +30,8 @@ const useTimer = (initialState = 0) => {
     timer,
     isActive,
     isPaused,
-    handleStart,
+    handlePlay,
     handlePause,
-    handleResume,
     handleReset,
   }
 }
