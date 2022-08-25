@@ -1,12 +1,15 @@
 import { formatInTimeZone } from "date-fns-tz"
 import React, { FC, useEffect, useState } from "react"
+import { TIME_ZONES } from "../constants"
 
 type ClockProps = {
-  timeZone?: string
+  timeZone?: TIME_ZONES
 }
 
+const defaultTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+
 const defaultProps = {
-  timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  timeZone: defaultTimeZone,
 }
 
 const Clock: FC<ClockProps> = ({ timeZone }) => {

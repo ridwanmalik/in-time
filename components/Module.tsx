@@ -1,19 +1,15 @@
 import React, { FC } from "react"
+import { MODULE_TYPES, TIME_ZONES } from "../constants"
 import Clock from "./Clock"
 import Stopwatch from "./Stopwatch"
 
-enum moduleTypes {
-  CLOCK = "CLOCK",
-  STOPWATCH = "STOPWATCH",
-}
-
 type Option = {
-  timeZone?: string
+  timeZone?: TIME_ZONES
 }
 
 type ModuleProps = {
   title: string
-  type?: moduleTypes
+  type?: MODULE_TYPES
   options?: Option
 }
 
@@ -21,14 +17,14 @@ const Module: FC<ModuleProps> = ({ title, type, options }) => {
   return (
     <div className="module glass">
       <h1>{title}</h1>
-      {type === moduleTypes.CLOCK && <Clock timeZone={options?.timeZone} />}
-      {type === moduleTypes.STOPWATCH && <Stopwatch />}
+      {type === MODULE_TYPES.CLOCK && <Clock timeZone={options?.timeZone} />}
+      {type === MODULE_TYPES.STOPWATCH && <Stopwatch />}
     </div>
   )
 }
 
 Module.defaultProps = {
-  type: moduleTypes.CLOCK,
+  type: MODULE_TYPES.CLOCK,
   options: {},
 }
 
