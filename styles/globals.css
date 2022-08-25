@@ -9,7 +9,7 @@
   }
 
   .glass {
-    @apply backdrop-blur-sm bg-slate-500/20 rounded-lg p-3 shadow-xl text-shadow-xl ring-1 ring-white/30;
+    @apply backdrop-blur-ms bg-slate-500/20 rounded-lg p-3 shadow-xl text-shadow-xl border border-t-white/30 border-l-white/30 border-r-white/10 border-b-white/10;
   }
 
   .stopwatch {
