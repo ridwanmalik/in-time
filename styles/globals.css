@@ -4,7 +4,8 @@
 
 @layer components {
   .home {
-    background: url("https://images.pexels.com/photos/1550564/pexels-photo-1550564.jpeg") center center no-repeat;
+    background: url("https://images.unsplash.com/photo-1533282960533-51328aa49826?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400")
+      center bottom no-repeat;
     background-size: cover;
   }
 

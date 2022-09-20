@@ -6,3 +6,6 @@ export const formatTime = (timer: number) => {
 
   return `${getHours}:${getMinutes}:${getSeconds}`
 }
+
+//capitalize only the first letter of the string.
+export const capitalizeFirstLetter = (string: string) => string.charAt(0).toUpperCase() + string.slice(1)

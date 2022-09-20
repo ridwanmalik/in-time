@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import { MODULE_TYPES, TIME_ZONES } from "../constants"
 import Clock from "./Clock"
+import Duration from "./Duration"
 import Stopwatch from "./Stopwatch"
 
 type Option = {
@@ -19,6 +20,7 @@ const Module: FC<ModuleProps> = ({ title, type, options }) => {
       <h1>{title}</h1>
       {type === MODULE_TYPES.CLOCK && <Clock timeZone={options?.timeZone} />}
       {type === MODULE_TYPES.STOPWATCH && <Stopwatch />}
+      {type === MODULE_TYPES.DURATION && <Duration />}
     </div>
   )
 }
