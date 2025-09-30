@@ -1,7 +1,7 @@
 "use client"
 
 import React, { FC } from "react"
-import { MODULE_TYPES, TIME_ZONES } from "../constants"
+import { MODULE_TYPES, TIME_ZONES } from "@/constants"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Clock from "./Clock"
 import Duration from "./Duration"

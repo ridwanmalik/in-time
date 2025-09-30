@@ -2,7 +2,7 @@
 
 import { formatInTimeZone } from "date-fns-tz"
 import React, { FC, useEffect, useState } from "react"
-import { TIME_ZONES } from "../constants"
+import { TIME_ZONES } from "@/constants"
 
 type ClockProps = {
   timeZone?: TIME_ZONES

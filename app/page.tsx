@@ -1,5 +1,5 @@
-import Module from "../components/Module"
-import { MODULE_TYPES, TIME_ZONES } from "../constants"
+import { Module } from "@/components/time-modules"
+import { MODULE_TYPES, TIME_ZONES } from "@/constants"
 
 export default function Home() {
   return (
